@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Stack from 'react-bootstrap/Stack';
 
 
-function Series1() {
+function Series2() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
   const [name, setName] = useState([])
@@ -15,7 +15,7 @@ function Series1() {
   }, [])
 
   const names = async () => {
-    const response = await fetch('https://surprise-5-api.vercel.app/api/minibrand/seriesNo/1');
+    const response = await fetch('https://surprise-5-api.vercel.app/api/minibrand/seriesNo/2');
 
     setName(await response.json())
 }
@@ -69,4 +69,4 @@ function Series1() {
   );
 }
 
-export default Series1
+export default Series2

@@ -5,7 +5,8 @@ import Col from 'react-bootstrap/Col'
 import Stack from 'react-bootstrap/Stack';
 
 
-function Series1() {
+
+function Series4() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
   const [name, setName] = useState([])
@@ -15,7 +16,7 @@ function Series1() {
   }, [])
 
   const names = async () => {
-    const response = await fetch('https://surprise-5-api.vercel.app/api/minibrand/seriesNo/1');
+    const response = await fetch('https://surprise-5-api.vercel.app/api/minibrand/seriesNo/4');
 
     setName(await response.json())
 }
@@ -35,7 +36,7 @@ function Series1() {
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
-        return total + ", " + item;
+        return total + <br /> + item;
       })
     : "";
 
@@ -61,7 +62,11 @@ function Series1() {
       <Col className=''>
       <Stack gap={3}>
       <div className="bg-light border">Items checked are: </div>
-      <div className="bg-light border"> {checkedItems} </div>
+      <div className="bg-light border"> 
+        <ul>
+            <li>{checkedItems} <br/> </li>
+        </ul>
+        </div>
         </Stack>
       </Col>
       </Row>
@@ -69,4 +74,4 @@ function Series1() {
   );
 }
 
-export default Series1
+export default Series4
